@@ -12,7 +12,6 @@ import pandas as pd
 import csv
 number_ofpage = input("please enter the number of page: ")
 url = f'https://www.amazon.eg/-/en/s?k=playstation+5&page={number_ofpage}&crid=1ZZ1Z3ABLLU67&qid=1725113905&sprefix=plays%2Caps%2C142&ref=sr_pg_{number_ofpage}'
-
 HEADERS = {'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36 Edg/128.0.0.0', 'accept_language': 'en-US, en;q=0.5'}
 
 productname = []
@@ -45,7 +44,7 @@ for i in range(length):
 
 data= list(zip(productname,price,ship_date,cost_ship))
 
-with open(r"C:\Users\zeyad\OneDrive\Desktop\amazon_scrapping.csv" , mode='w', newline='')as amazon_file : 
+with open(r"C:\Users\zeyad\OneDrive\Desktop\amazon_scrapping.csv" , mode='w', newline='' ,encoding='utf-8')as amazon_file : 
     
     wr=csv.writer(amazon_file)
     wr.writerow(['product' , 'price' , 'shipping_date' , 'cost'])
